@@ -1,0 +1,27 @@
+ALGORITHM sentence
+VAR
+    phrase: STRING:="";
+    len, nbw, nbv: INTEGER;
+    i: INTEGER:=0;
+    c: CHAR:="";
+BEGIN
+ nbw:=0
+ nbv:=0
+    WHILE (phrase[phrase.length]<>'.') DO
+        Read (c)
+        phrase=phrase+c 
+        i :=i+1
+    END_WHILE
+    FOR i FROM 0 TO phrase.length-1   DO
+    IF (phrase[i]=' ') THEN
+        nbw= nbw+1
+    END_IF
+    IF (phrase[i]='a' OR phrase[i]='A' OR phrase[i]='e' OR phrase[i]='E' OR phrase[i]='i' OR phrase[i]='I' OR phrase[i]='o' OR phrase[i]='O' OR phrase[i]='u' OR phrase[i]='U' OR phrase[i]='y' OR phrase[i]='Y') THEN
+        nbv++
+    END_IF
+    END_FOR
+    len:=phrase.length;
+    Write("The length of the sentence", len)
+    Write("The number of words in the sentence", nbw)
+    Write("The number of vowels in the sentence", nbv)
+END
